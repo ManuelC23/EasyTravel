@@ -1,6 +1,6 @@
 function renderHome() {
   const container = document.getElementById('content');
-  container.classList.remove('about', 'contact');
+  container.classList.remove('about', 'contact', 'recommendations');
   container.classList.add('home');
   container.innerHTML = `<h2 class="home">Explore the World</h2>
       <p>
@@ -12,7 +12,7 @@ function renderHome() {
 
 function renderAbout() {
   const container = document.getElementById('content');
-  container.classList.remove('home', 'contact');
+  container.classList.remove('home', 'contact', 'recommendations');
   container.classList.add('about');
   container.innerHTML = `<h2>About Us</h2>
       <p class='aboutText'>
@@ -34,7 +34,7 @@ function renderAbout() {
 
 function renderContact() {
   const container = document.getElementById('content');
-  container.classList.remove('home', 'about');
+  container.classList.remove('home', 'about', 'recommendations');
   container.classList.add('contact');
   container.innerHTML = `
   <div class="contact">
@@ -54,6 +54,53 @@ function renderContact() {
     </form>
   </div>
 </div>`;
+}
+
+function getRecommendations() {
+  const query = document.getElementById('input').value.toLowerCase();
+
+  fetch('travel_recommendation_api.json')
+    .then((response) => response.json())
+    .then((data) => {
+      for (let i in data) {
+        for (let j in data[i]) {
+          if (query === data[i][j].name.toLowerCase()) {
+            const information = {
+              name: data[i][j].name,
+              cities: data[i][j].cities,
+            };
+            renderInformation(information); //Aquí consigo la información del API
+          }
+        }
+      }
+    });
+}
+
+function renderInformation(info) {
+  const container = document.getElementById('content');
+  container.classList.remove('home', 'contact', 'about');
+  container.classList.add('recommendations');
+  container.innerHTML = `<h3>Our Recommendations for ${info.name}</h3>
+  <div id="infoCards"></div>`;
+  renderCard(info);
+}
+
+function renderCard(info) {
+  const container = document.getElementById('infoCards');
+  for (let i = 0; i < info.cities.length; i++) {
+    const cityName = info.cities[i].name;
+    const image = info.cities[i].imageUrl;
+    const description = info.cities[i].description;
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = `<img src=${image} class="cardImage"> <h4>${cityName}</h4> <h5>${description}</h5>`;
+    container.appendChild(card);
+  }
+}
+
+function resetForm() {
+  const query = document.getElementById('input');
+  query.value = '';
 }
 
 renderHome();

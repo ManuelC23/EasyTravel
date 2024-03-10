@@ -52,7 +52,7 @@ nav #search #input {
   font-size: 20px;
 }
 
-nav #search button {
+nav button {
   background-color: #76abae;
   color: white;
   font-family: Coolvetica;
@@ -207,4 +207,50 @@ nav #search button {
 
 .contact form #message {
   height: 200px;
+}
+
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recommendations h3 {
+  color: white;
+  font-size: 30px;
+  font-family: Coolvetica;
+}
+
+.recommendations h4 {
+  color: white;
+  font-family: Coolvetica;
+  font-size: 2em;
+}
+
+.recommendations h5 {
+  color: white;
+  font-family: Coolvetica;
+  font-size: 1.7em;
+}
+
+.recommendations #infoCards {
+  display: flex;
+  justify-content: center;
+}
+
+.recommendations .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 10vw;
+  background-color: rgba(187, 187, 187, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  width: 20vw;
+}
+
+.cardImage {
+  height: 250px;
+  width: 300px;
+  border-radius: 10%;
 }
