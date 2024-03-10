@@ -1,0 +1,210 @@
+body {
+  background-image: url(/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: Coolvetica;
+}
+
+@font-face {
+  font-family: Coolvetica;
+  src: url('coolvetica\ rg.otf');
+}
+
+nav {
+  display: flex;
+  background-color: #31363f;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+nav #logo {
+  display: flex;
+  align-items: center;
+  color: #eeeeee;
+}
+
+nav #logo h1 {
+  margin: 0px 0px 0px 10px;
+}
+
+nav #links a {
+  color: #eeeeee;
+  font-family: Coolvetica;
+  margin: 10px;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+nav #search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav #search #input {
+  padding: 10px;
+  border-radius: 30px;
+  width: 400px;
+  border: none;
+  font-family: Coolvetica;
+  font-size: 20px;
+}
+
+nav #search button {
+  background-color: #76abae;
+  color: white;
+  font-family: Coolvetica;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 10%;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.home {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin: 0% 10%;
+  height: 100%;
+}
+
+.home h2,
+.about h2 {
+  margin: 20px 0px 0px 0px;
+  font-size: 10em;
+  color: white;
+  font-family: Coolvetica;
+}
+
+.home p,
+.about p {
+  font-size: 3.5em;
+  color: white;
+  font-family: Coolvetica;
+  margin: 0px;
+}
+
+.home p button {
+  background-color: rgba(77, 77, 77, 0.3);
+  color: white;
+  font-family: Coolvetica;
+  font-size: 0.5em;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.home p button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-family: Coolvetica;
+  font-size: 0.5em;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0% 10%;
+  gap: 2em;
+}
+
+.about .aboutText {
+  font-size: 40px;
+}
+
+.about .teamMembers {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about .teamMembers .memberCard {
+  display: flex;
+  background-color: rgba(187, 187, 187, 0.3);
+  height: 10em;
+}
+
+.about .teamMembers img {
+  height: 100%;
+}
+
+.about .teamMembers .memberInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  margin: 10px;
+}
+
+.about .teamMembers .memberName {
+  color: white;
+  margin: 10px;
+}
+
+.about .teamMembers .memberDescription {
+  color: white;
+  font-size: 30px;
+  margin: 10px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-top: 8vh;
+  gap: 50px;
+}
+
+.contact .contactInfo {
+  flex: 20%;
+}
+.contact .contactTitle {
+  font-size: 10em;
+  margin: 0;
+}
+
+.contact .contactDescription {
+  font-size: 3em;
+  margin: 0;
+}
+
+.contact .contactForm {
+  flex: 80%;
+  background-color: rgba(187, 187, 187, 0.4);
+  border-radius: 10%;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  margin: 10% 10%;
+}
+
+.contact form label {
+  font-size: 1.5em;
+  margin: 5px 0px;
+}
+
+.contact form input {
+  font-size: 1.5em;
+  margin: 5px 0px;
+  font-family: Coolvetica;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.contact form .submitForm {
+  cursor: pointer;
+}
+
+.contact form #message {
+  height: 200px;
+}
