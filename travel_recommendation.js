@@ -58,22 +58,43 @@ function renderContact() {
 
 function getRecommendations() {
   const query = document.getElementById('input').value.toLowerCase();
-
-  fetch('travel_recommendation_api.json')
-    .then((response) => response.json())
-    .then((data) => {
-      for (let i in data) {
-        for (let j in data[i]) {
-          if (query === data[i][j].name.toLowerCase()) {
-            const information = {
-              name: data[i][j].name,
-              cities: data[i][j].cities,
-            };
-            renderInformation(information); //Aquí consigo la información del API
+  if (
+    query.includes('beach') ||
+    query.includes('temple') ||
+    query.includes('citi')
+  ) {
+    fetch('travel_recommendation_api.json')
+      .then((response) => response.json())
+      .then((data) => {
+        for (let i in data) {
+          for (let j in data[i]) {
+            if (query === data[i][j].name.toLowerCase()) {
+              const information = {
+                name: data[i][j].name,
+                cities: data[i][j].cities,
+              };
+              renderInformation(information); //Aquí consigo la información del API
+            }
           }
         }
-      }
-    });
+      });
+  } else {
+    fetch('travel_recommendation_api.json')
+      .then((response) => response.json())
+      .then((data) => {
+        for (let i in data) {
+          for (let j in data[i]) {
+            if (query === data[i][j].name.toLowerCase()) {
+              const information = {
+                name: data[i][j].name,
+                cities: data[i][j].cities,
+              };
+              renderInformation(information); //Aquí consigo la información del API
+            }
+          }
+        }
+      });
+  }
 }
 
 function renderInformation(info) {
