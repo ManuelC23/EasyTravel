@@ -66,16 +66,41 @@ function getRecommendations() {
     fetch('travel_recommendation_api.json')
       .then((response) => response.json())
       .then((data) => {
-        for (let i in data) {
-          for (let j in data[i]) {
-            if (query === data[i][j].name.toLowerCase()) {
-              const information = {
-                name: data[i][j].name,
-                cities: data[i][j].cities,
-              };
-              renderInformation(information); //Aquí consigo la información del API
-            }
-          }
+        if (query.includes('citi')) {
+          const information = {
+            name: 'Cities',
+            cities: [
+              {
+                name: 'Rio de Janeiro, Brazil',
+
+                imageUrl: './rio.jpeg',
+
+                description:
+                  'A lively city known for its stunning beaches, vibrant carnival celebrations, and iconic landmarks.',
+              },
+              {
+                name: 'Sydney, Australia',
+
+                imageUrl: './sydney.jpg',
+
+                description:
+                  'A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge.',
+              },
+            ],
+          };
+          return renderInformation(information);
+        } else if (query.includes('temple')) {
+          const information = {
+            name: 'Temples',
+            cities: data['temples'],
+          };
+          renderInformation(information);
+        } else {
+          const information = {
+            name: 'Beaches',
+            cities: data['beaches'],
+          };
+          renderInformation(information);
         }
       });
   } else {

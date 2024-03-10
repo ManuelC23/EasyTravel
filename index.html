@@ -17,11 +17,13 @@
         <a onclick="renderAbout()">About us</a>
         <a onclick="renderContact()">Contact Us</a>
       </div>
-      <form id="search">
-        <input id="input" type="text" placeholder="Enter your destination" />
-      </form>
-      <button id="search" onclick="getRecommendations()">Search</button>
-      <button id="reset" onclick="resetForm()">Reset</button>
+      <div id="searchDiv">
+        <form id="search">
+          <input id="input" type="text" placeholder="Enter your destination" />
+        </form>
+        <button id="search" onclick="getRecommendations()">Search</button>
+        <button id="reset" onclick="resetForm()">Reset</button>
+      </div>
     </nav>
     <div id="content"></div>
     <script src="./travel_recommendation.js"></script>
